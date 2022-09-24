@@ -1,5 +1,5 @@
 <template>
-  <div>订单</div>
+  <view>订单</view>
 </template>
 
 <script>

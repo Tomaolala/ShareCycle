@@ -32,6 +32,24 @@
       "style": {
         "navigationStyle": "custom"
       }
+    },
+    {
+      "path": "pages/my-page/account/index", // 我的-账户
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/my-page/payment-record/index", // 我的-支付记录
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/my-page/journey-record/index", // 我的-行程记录
+      "style": {
+        "navigationStyle": "custom"
+      }
     }
   ],
   "globalStyle": {
