@@ -28,7 +28,7 @@
       }
     },
     {
-      "path": "pages/my-page/ ", // 我的
+      "path": "pages/my-page/index", // 我的
       "style": {
         "navigationStyle": "custom"
       }

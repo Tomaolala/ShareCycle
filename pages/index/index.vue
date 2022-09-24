@@ -7,7 +7,7 @@
     </view>
 
     <view class="tabbar">
-      <u-tabbar :value="routeActive"  :fixed="true" @change="change">
+      <u-tabbar :value="routeActive"  :fixed="true">
         <u-tabbar-item v-for="(route,index) in routeList" :name="index" :key="route.name" :text="route.text" :icon="route.icon" @click="routeChange"/>
       </u-tabbar>
     </view>
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      routeActive: 0,
+      routeActive: 2,
       routeList: [
         {
           name: 'homePage',
