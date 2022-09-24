@@ -1,14 +1,15 @@
 <template>
   <view class="content">
+    <view class="top-status-bar" />
     <view class="main">
-      <homePage v-show="this.routeActive === 0"/>
-      <orderPage v-show="this.routeActive === 1"/>
-      <myPage v-show="this.routeActive === 2"/>
+      <homePage v-show="this.routeActive === 0" />
+      <orderPage v-show="this.routeActive === 1" />
+      <myPage v-show="this.routeActive === 2" />
     </view>
 
     <view class="tabbar">
-      <u-tabbar :value="routeActive"  :fixed="true">
-        <u-tabbar-item v-for="(route,index) in routeList" :name="index" :key="route.name" :text="route.text" :icon="route.icon" @click="routeChange"/>
+      <u-tabbar :value="routeActive" :fixed="true">
+        <u-tabbar-item v-for="(route, index) in routeList" :name="index" :key="route.name" :text="route.text" :icon="route.icon" @click="routeChange" />
       </u-tabbar>
     </view>
   </view>
@@ -44,7 +45,7 @@ export default {
           text: '我的',
           icon: 'account'
         }
-      ],
+      ]
     }
   },
   onLoad() {},
@@ -56,4 +57,4 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>
