@@ -1,0 +1,225 @@
+<template>
+  <view class="login-wrap  padding-status-bar">
+    <view class="login-logo">
+        <image mode="" src="~@/static/images/logo.svg" />
+       
+    </view>
+    <view class="login-title">账号密码登录</view>
+    <view class="login-form">
+      <u--form
+        ref="loginForm"
+        error-type="toast"
+        label-position="left"
+        :model="loginInfo"
+        :rules="rules"
+      >
+        <view  :class="{ 'form-item': true }">
+          <u-form-item prop="username">
+            <u-input
+              v-model="loginInfo.username"
+              placeholder="账号"
+              @blur="blurHandle('username')"
+              @focus="focusHandle('username')"
+            >
+              <template slot="prefix">
+                <text class="iconfont icon-account prefix-icon" />
+              </template>
+            </u-input>
+          </u-form-item>
+        </view>
+
+        <view  :class="{  'form-item': true }">
+          <u-form-item prop="password">
+            <u-input
+              v-model="loginInfo.password"
+              placeholder="密码"
+              :type="pwdShow ? 'text' : 'password'"
+              @blur="blurHandle('password')"
+              @focus="focusHandle('password')"
+            >
+              <template slot="prefix">
+                <text class="iconfont icon-password prefix-icon" />
+              </template>
+              <template slot="suffix">
+                <text
+                  class="iconfont prefix-icon"
+                  :class="pwdShow ? 'icon-pwdyc' : 'icon-pwdxs'"
+                  @click="pwdShow = !pwdShow"
+                />
+              </template>
+            </u-input>
+          </u-form-item>
+        </view>
+
+        <view class="form-item">
+          <view class="toggle-login flex-c">
+          </view>
+          <u-form-item>
+            <u-button shape="circle" text="登录" type="primary" @click="submit" />
+          </u-form-item>
+        </view>
+      </u--form>
+    </view>
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        loginInfo: {
+          username: '',
+          password: '',
+        },
+        rules: {
+          username: [
+            {
+              required: true,
+              message: '请输入账号',
+            },
+          ],
+          password: [
+            {
+              required: true,
+              message: '请输入密码',
+            },
+          ],
+        },
+        isDxLogin: true,
+        codeFocus: false,
+        passwordFocus: false,
+        pwdShow: false,
+      }
+    },
+    computed: {
+      codeClassDisable() {
+        return uni.$u.test.mobile(this.loginInfo.phone) ? false : true
+      },
+    },
+    onReady() {
+      this.$refs.loginForm.setRules(this.rules)
+    },
+    methods: {
+      submit() {
+        uni.navigateTo({
+          url: '/pages/index/index'
+        })
+        this.$refs.loginForm
+          .validate()
+          .then(async (res) => {
+            try {
+              // const res = await this.login(this.loginInfo)
+              
+              // if (res) {
+              //   this.$toast.success('登录成功!')
+              //   setTimeout(() => {
+              //     uni.redirectTo({
+              //       url: '/pages/index/index',
+              //     })
+              //   }, 600)
+              // } else {
+              //   this.$toast.error('登录失败!')
+              // }
+            } catch (e) {
+              console.log(e)
+              uni.$u.toast('登录失败，' + e)
+            }
+          })
+          .catch((errors) => {})
+      },
+      focusHandle(key) {
+        this[key + 'Focus'] = true
+      },
+      blurHandle(key) {
+        this[key + 'Focus'] = false
+      },
+    },
+  }
+</script>
+
+<style lang="scss" scoped>
+  .login-wrap {
+    height: 100vh;
+    // background-color: #f2f2f2;
+    position: relative;
+    background: linear-gradient( #F6EBE6,#AEE1F9);
+
+    .code-class-disable {
+      color: #c0c0c0 !important;
+    }
+
+    .login-logo {
+      height: 600rpx;
+      width: 85%;
+      margin: 0 auto;
+      padding-top: 80rpx;
+      text-align: center;
+      
+      image {
+        width: 50%;
+        height: 50%;
+        margin-top: 20%;
+        background: rgba(255,255,255,0.2);
+        box-shadow: 0px 0px 20px 1px rgba(255,255,255,1);
+        border-radius: 50%;
+        padding: 50rpx;
+      }
+    }
+
+    .login-title {
+      width: 100%;
+      text-align: center;
+      color: #333;
+      font-size: 40rpx;
+    }
+
+    /deep/ .u-form {
+      height: 100%;
+    }
+
+    .login-form {
+      .form-item {
+        margin: 20rpx 30rpx;
+
+        /deep/ .u-input {
+          border: 1rpx solid #fff;
+          border-radius: 45rpx;
+          background-color: #fff;
+          padding: 20rpx 30rpx !important;
+        }
+
+        .prefix-icon {
+          font-size: 38rpx;
+          margin-right: 20rpx;
+          color: #cecece;
+        }
+
+        .code-text {
+          color: #2b85e4;
+          font-size: 28rpx;
+        }
+      }
+
+      .focus {
+        /deep/ .u-input {
+          border: 1rpx solid #1877f2 !important;
+        }
+
+        .prefix-icon {
+          color: #1877f2;
+        }
+      }
+    }
+
+    .toggle-login {
+      color: #1877f2;
+      font-size: 30rpx;
+      padding: 20rpx 10rpx;
+
+      .forget-pwd {
+        font-size: 26rpx;
+        color: #a3a3a3;
+      }
+    }
+  }
+</style>

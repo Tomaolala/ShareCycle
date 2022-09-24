@@ -44,7 +44,7 @@ export default {
       userName: '用户x',
       loginDays: 1,
       usedDays: 1,
-      account: 200.00,
+      account: '200.00',
       cellList: [
         {
           icon: 'coupon',
