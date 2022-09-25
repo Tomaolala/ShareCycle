@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      routeActive: 2,
+      routeActive: 0,
       routeList: [
         {
           name: 'homePage',
