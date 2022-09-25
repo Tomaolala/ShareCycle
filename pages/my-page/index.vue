@@ -75,8 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $color1: #83eaf1;
-  $color2: #63a4ff;
+  
 .my-page-container {
   height: 100vh;
   .header {
