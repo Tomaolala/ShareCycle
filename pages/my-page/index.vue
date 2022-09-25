@@ -55,6 +55,11 @@ export default {
           icon: 'star',
           title: '行程记录',
           url: '/pages/my-page/journey-record/index'
+        },
+        {
+          icon: 'clock',
+          title: '退出',
+          url: '/pages/login/index'
         }
       ]
     }

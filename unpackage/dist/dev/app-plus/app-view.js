@@ -259,39 +259,40 @@ var render = function() {
     "v-uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("v-uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
           _c("v-uni-image", {
-            attrs: { mode: "", src: "/static/images/logo.svg", _i: 2 }
+            attrs: { mode: "", src: "/static/images/logo.svg", _i: 3 }
           })
         ],
         1
       ),
-      _c("v-uni-view", { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } }, [
+      _c("v-uni-view", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } }, [
         _vm._v("账号密码登录")
       ]),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
+        { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
         [
           _c(
             "u--form",
-            { ref: "loginForm", attrs: { _i: 5 } },
+            { ref: "loginForm", attrs: { _i: 6 } },
             [
               _c(
                 "v-uni-view",
-                { class: _vm._$g(6, "c"), attrs: { _i: 6 } },
+                { class: _vm._$g(7, "c"), attrs: { _i: 7 } },
                 [
                   _c(
                     "u-form-item",
-                    { attrs: { _i: 7 } },
+                    { attrs: { _i: 8 } },
                     [
                       _c(
                         "u-input",
                         {
-                          attrs: { _i: 8 },
+                          attrs: { _i: 9 },
                           on: {
                             blur: function($event) {
                               return _vm.$handleViewEvent($event)
@@ -301,7 +302,7 @@ var render = function() {
                             }
                           },
                           model: {
-                            value: _vm._$g(8, "v-model"),
+                            value: _vm._$g(9, "v-model"),
                             callback: function() {},
                             expression: "loginInfo.username"
                           }
@@ -309,11 +310,11 @@ var render = function() {
                         [
                           _c(
                             "template",
-                            { attrs: { _i: 9 }, slot: "prefix" },
+                            { attrs: { _i: 10 }, slot: "prefix" },
                             [
                               _c("v-uni-text", {
-                                staticClass: _vm._$g(10, "sc"),
-                                attrs: { _i: 10 }
+                                staticClass: _vm._$g(11, "sc"),
+                                attrs: { _i: 11 }
                               })
                             ],
                             1
@@ -329,16 +330,16 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { class: _vm._$g(11, "c"), attrs: { _i: 11 } },
+                { class: _vm._$g(12, "c"), attrs: { _i: 12 } },
                 [
                   _c(
                     "u-form-item",
-                    { attrs: { _i: 12 } },
+                    { attrs: { _i: 13 } },
                     [
                       _c(
                         "u-input",
                         {
-                          attrs: { _i: 13 },
+                          attrs: { _i: 14 },
                           on: {
                             blur: function($event) {
                               return _vm.$handleViewEvent($event)
@@ -348,7 +349,7 @@ var render = function() {
                             }
                           },
                           model: {
-                            value: _vm._$g(13, "v-model"),
+                            value: _vm._$g(14, "v-model"),
                             callback: function() {},
                             expression: "loginInfo.password"
                           }
@@ -356,23 +357,23 @@ var render = function() {
                         [
                           _c(
                             "template",
-                            { attrs: { _i: 14 }, slot: "prefix" },
+                            { attrs: { _i: 15 }, slot: "prefix" },
                             [
                               _c("v-uni-text", {
-                                staticClass: _vm._$g(15, "sc"),
-                                attrs: { _i: 15 }
+                                staticClass: _vm._$g(16, "sc"),
+                                attrs: { _i: 16 }
                               })
                             ],
                             1
                           ),
                           _c(
                             "template",
-                            { attrs: { _i: 16 }, slot: "suffix" },
+                            { attrs: { _i: 17 }, slot: "suffix" },
                             [
                               _c("v-uni-text", {
-                                staticClass: _vm._$g(17, "sc"),
-                                class: _vm._$g(17, "c"),
-                                attrs: { _i: 17 },
+                                staticClass: _vm._$g(18, "sc"),
+                                class: _vm._$g(18, "c"),
+                                attrs: { _i: 18 },
                                 on: {
                                   click: function($event) {
                                     return _vm.$handleViewEvent($event)
@@ -393,18 +394,18 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+                { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
                 [
                   _c("v-uni-view", {
-                    staticClass: _vm._$g(19, "sc"),
-                    attrs: { _i: 19 }
+                    staticClass: _vm._$g(20, "sc"),
+                    attrs: { _i: 20 }
                   }),
                   _c(
                     "u-form-item",
-                    { attrs: { _i: 20 } },
+                    { attrs: { _i: 21 } },
                     [
                       _c("u-button", {
-                        attrs: { _i: 21 },
+                        attrs: { _i: 22 },
                         on: {
                           click: function($event) {
                             return _vm.$handleViewEvent($event)

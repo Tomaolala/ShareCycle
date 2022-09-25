@@ -123,23 +123,24 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "view",
-    {
-      staticClass: _vm._$s(0, "sc", "login-wrap  padding-status-bar"),
-      attrs: { _i: 0 }
-    },
+    { staticClass: _vm._$s(0, "sc", "login-wrap"), attrs: { _i: 0 } },
     [
-      _c(
-        "view",
-        { staticClass: _vm._$s(1, "sc", "login-logo"), attrs: { _i: 1 } },
-        [_c("image", { attrs: { _i: 2 } })]
-      ),
       _c("view", {
-        staticClass: _vm._$s(3, "sc", "login-title"),
-        attrs: { _i: 3 }
+        staticClass: _vm._$s(1, "sc", "top-status-bar"),
+        attrs: { _i: 1 }
       }),
       _c(
         "view",
-        { staticClass: _vm._$s(4, "sc", "login-form"), attrs: { _i: 4 } },
+        { staticClass: _vm._$s(2, "sc", "login-logo"), attrs: { _i: 2 } },
+        [_c("image", { attrs: { _i: 3 } })]
+      ),
+      _c("view", {
+        staticClass: _vm._$s(4, "sc", "login-title"),
+        attrs: { _i: 4 }
+      }),
+      _c(
+        "view",
+        { staticClass: _vm._$s(5, "sc", "login-form"), attrs: { _i: 5 } },
         [
           _c(
             "u--form",
@@ -150,25 +151,25 @@ var render = function() {
                 "label-position": "left",
                 model: _vm.loginInfo,
                 rules: _vm.rules,
-                _i: 5
+                _i: 6
               }
             },
             [
               _c(
                 "view",
                 {
-                  class: _vm._$s(6, "c", { "form-item": true }),
-                  attrs: { _i: 6 }
+                  class: _vm._$s(7, "c", { "form-item": true }),
+                  attrs: { _i: 7 }
                 },
                 [
                   _c(
                     "u-form-item",
-                    { attrs: { prop: "username", _i: 7 } },
+                    { attrs: { prop: "username", _i: 8 } },
                     [
                       _c(
                         "u-input",
                         {
-                          attrs: { placeholder: "账号", _i: 8 },
+                          attrs: { placeholder: "账号", _i: 9 },
                           on: {
                             blur: function($event) {
                               return _vm.blurHandle("username")
@@ -179,7 +180,7 @@ var render = function() {
                           },
                           model: {
                             value: _vm._$s(
-                              8,
+                              9,
                               "v-model",
                               _vm.loginInfo.username
                             ),
@@ -193,11 +194,11 @@ var render = function() {
                           _c("template", { slot: "prefix" }, [
                             _c("text", {
                               staticClass: _vm._$s(
-                                10,
+                                11,
                                 "sc",
                                 "iconfont icon-account prefix-icon"
                               ),
-                              attrs: { _i: 10 }
+                              attrs: { _i: 11 }
                             })
                           ])
                         ],
@@ -212,13 +213,13 @@ var render = function() {
               _c(
                 "view",
                 {
-                  class: _vm._$s(11, "c", { "form-item": true }),
-                  attrs: { _i: 11 }
+                  class: _vm._$s(12, "c", { "form-item": true }),
+                  attrs: { _i: 12 }
                 },
                 [
                   _c(
                     "u-form-item",
-                    { attrs: { prop: "password", _i: 12 } },
+                    { attrs: { prop: "password", _i: 13 } },
                     [
                       _c(
                         "u-input",
@@ -226,7 +227,7 @@ var render = function() {
                           attrs: {
                             placeholder: "密码",
                             type: _vm.pwdShow ? "text" : "password",
-                            _i: 13
+                            _i: 14
                           },
                           on: {
                             blur: function($event) {
@@ -238,7 +239,7 @@ var render = function() {
                           },
                           model: {
                             value: _vm._$s(
-                              13,
+                              14,
                               "v-model",
                               _vm.loginInfo.password
                             ),
@@ -252,26 +253,26 @@ var render = function() {
                           _c("template", { slot: "prefix" }, [
                             _c("text", {
                               staticClass: _vm._$s(
-                                15,
+                                16,
                                 "sc",
                                 "iconfont icon-password prefix-icon"
                               ),
-                              attrs: { _i: 15 }
+                              attrs: { _i: 16 }
                             })
                           ]),
                           _c("template", { slot: "suffix" }, [
                             _c("text", {
                               staticClass: _vm._$s(
-                                17,
+                                18,
                                 "sc",
                                 "iconfont prefix-icon"
                               ),
                               class: _vm._$s(
-                                17,
+                                18,
                                 "c",
                                 _vm.pwdShow ? "icon-pwdyc" : "icon-pwdxs"
                               ),
-                              attrs: { _i: 17 },
+                              attrs: { _i: 18 },
                               on: {
                                 click: function($event) {
                                   _vm.pwdShow = !_vm.pwdShow
@@ -291,24 +292,24 @@ var render = function() {
               _c(
                 "view",
                 {
-                  staticClass: _vm._$s(18, "sc", "form-item"),
-                  attrs: { _i: 18 }
+                  staticClass: _vm._$s(19, "sc", "form-item"),
+                  attrs: { _i: 19 }
                 },
                 [
                   _c("view", {
-                    staticClass: _vm._$s(19, "sc", "toggle-login flex-c"),
-                    attrs: { _i: 19 }
+                    staticClass: _vm._$s(20, "sc", "toggle-login flex-c"),
+                    attrs: { _i: 20 }
                   }),
                   _c(
                     "u-form-item",
-                    { attrs: { _i: 20 } },
+                    { attrs: { _i: 21 } },
                     [
                       _c("u-button", {
                         attrs: {
                           shape: "circle",
                           text: "登录",
                           type: "primary",
-                          _i: 21
+                          _i: 22
                         },
                         on: { click: _vm.submit }
                       })
@@ -4855,7 +4856,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _D_H
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  data: function data() {\n    return {\n      userName: '用户x',\n      loginDays: 1,\n      usedDays: 1,\n      account: '200.00',\n      cellList: [\n      {\n        icon: 'coupon',\n        title: '支付记录',\n        url: '/pages/my-page/payment-record/index' },\n\n      {\n        icon: 'star',\n        title: '行程记录',\n        url: '/pages/my-page/journey-record/index' }] };\n\n\n\n  },\n  methods: {\n    changeRoute: function changeRoute(url) {\n      uni.navigateTo({\n        url: url });\n\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvbXktcGFnZS9pbmRleC52dWUiXSwibmFtZXMiOlsiZGF0YSIsInVzZXJOYW1lIiwibG9naW5EYXlzIiwidXNlZERheXMiLCJhY2NvdW50IiwiY2VsbExpc3QiLCJpY29uIiwidGl0bGUiLCJ1cmwiLCJtZXRob2RzIiwiY2hhbmdlUm91dGUiLCJ1bmkiLCJuYXZpZ2F0ZVRvIl0sIm1hcHBpbmdzIjoid0ZBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVlO0FBQ2JBLE1BRGEsa0JBQ047QUFDTCxXQUFPO0FBQ0xDLGNBQVEsRUFBRSxLQURMO0FBRUxDLGVBQVMsRUFBRSxDQUZOO0FBR0xDLGNBQVEsRUFBRSxDQUhMO0FBSUxDLGFBQU8sRUFBRSxRQUpKO0FBS0xDLGNBQVEsRUFBRTtBQUNSO0FBQ0VDLFlBQUksRUFBRSxRQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQURROztBQU1SO0FBQ0VGLFlBQUksRUFBRSxNQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQU5RLENBTEwsRUFBUDs7OztBQWtCRCxHQXBCWTtBQXFCYkMsU0FBTyxFQUFFO0FBQ1BDLGVBRE8sdUJBQ0tGLEdBREwsRUFDVTtBQUNmRyxTQUFHLENBQUNDLFVBQUosQ0FBZTtBQUNiSixXQUFHLEVBQUhBLEdBRGEsRUFBZjs7QUFHRCxLQUxNLEVBckJJLEUiLCJmaWxlIjoiMTIwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGRhdGEoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIHVzZXJOYW1lOiAn55So5oi3eCcsXG4gICAgICBsb2dpbkRheXM6IDEsXG4gICAgICB1c2VkRGF5czogMSxcbiAgICAgIGFjY291bnQ6ICcyMDAuMDAnLFxuICAgICAgY2VsbExpc3Q6IFtcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdjb3Vwb24nLFxuICAgICAgICAgIHRpdGxlOiAn5pSv5LuY6K6w5b2VJyxcbiAgICAgICAgICB1cmw6ICcvcGFnZXMvbXktcGFnZS9wYXltZW50LXJlY29yZC9pbmRleCdcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdzdGFyJyxcbiAgICAgICAgICB0aXRsZTogJ+ihjOeoi+iusOW9lScsXG4gICAgICAgICAgdXJsOiAnL3BhZ2VzL215LXBhZ2Uvam91cm5leS1yZWNvcmQvaW5kZXgnXG4gICAgICAgIH1cbiAgICAgIF1cbiAgICB9XG4gIH0sXG4gIG1ldGhvZHM6IHtcbiAgICBjaGFuZ2VSb3V0ZSh1cmwpIHtcbiAgICAgIHVuaS5uYXZpZ2F0ZVRvKHtcbiAgICAgICAgdXJsXG4gICAgICB9KVxuICAgIH1cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///120\n");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  data: function data() {\n    return {\n      userName: '用户x',\n      loginDays: 1,\n      usedDays: 1,\n      account: '200.00',\n      cellList: [\n      {\n        icon: 'coupon',\n        title: '支付记录',\n        url: '/pages/my-page/payment-record/index' },\n\n      {\n        icon: 'star',\n        title: '行程记录',\n        url: '/pages/my-page/journey-record/index' },\n\n      {\n        icon: 'clock',\n        title: '退出',\n        url: '/pages/login/index' }] };\n\n\n\n  },\n  methods: {\n    changeRoute: function changeRoute(url) {\n      uni.navigateTo({\n        url: url });\n\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvbXktcGFnZS9pbmRleC52dWUiXSwibmFtZXMiOlsiZGF0YSIsInVzZXJOYW1lIiwibG9naW5EYXlzIiwidXNlZERheXMiLCJhY2NvdW50IiwiY2VsbExpc3QiLCJpY29uIiwidGl0bGUiLCJ1cmwiLCJtZXRob2RzIiwiY2hhbmdlUm91dGUiLCJ1bmkiLCJuYXZpZ2F0ZVRvIl0sIm1hcHBpbmdzIjoid0ZBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVlO0FBQ2JBLE1BRGEsa0JBQ047QUFDTCxXQUFPO0FBQ0xDLGNBQVEsRUFBRSxLQURMO0FBRUxDLGVBQVMsRUFBRSxDQUZOO0FBR0xDLGNBQVEsRUFBRSxDQUhMO0FBSUxDLGFBQU8sRUFBRSxRQUpKO0FBS0xDLGNBQVEsRUFBRTtBQUNSO0FBQ0VDLFlBQUksRUFBRSxRQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQURROztBQU1SO0FBQ0VGLFlBQUksRUFBRSxNQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQU5ROztBQVdSO0FBQ0VGLFlBQUksRUFBRSxPQURSO0FBRUVDLGFBQUssRUFBRSxJQUZUO0FBR0VDLFdBQUcsRUFBRSxvQkFIUCxFQVhRLENBTEwsRUFBUDs7OztBQXVCRCxHQXpCWTtBQTBCYkMsU0FBTyxFQUFFO0FBQ1BDLGVBRE8sdUJBQ0tGLEdBREwsRUFDVTtBQUNmRyxTQUFHLENBQUNDLFVBQUosQ0FBZTtBQUNiSixXQUFHLEVBQUhBLEdBRGEsRUFBZjs7QUFHRCxLQUxNLEVBMUJJLEUiLCJmaWxlIjoiMTIwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGRhdGEoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIHVzZXJOYW1lOiAn55So5oi3eCcsXG4gICAgICBsb2dpbkRheXM6IDEsXG4gICAgICB1c2VkRGF5czogMSxcbiAgICAgIGFjY291bnQ6ICcyMDAuMDAnLFxuICAgICAgY2VsbExpc3Q6IFtcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdjb3Vwb24nLFxuICAgICAgICAgIHRpdGxlOiAn5pSv5LuY6K6w5b2VJyxcbiAgICAgICAgICB1cmw6ICcvcGFnZXMvbXktcGFnZS9wYXltZW50LXJlY29yZC9pbmRleCdcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdzdGFyJyxcbiAgICAgICAgICB0aXRsZTogJ+ihjOeoi+iusOW9lScsXG4gICAgICAgICAgdXJsOiAnL3BhZ2VzL215LXBhZ2Uvam91cm5leS1yZWNvcmQvaW5kZXgnXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBpY29uOiAnY2xvY2snLFxuICAgICAgICAgIHRpdGxlOiAn6YCA5Ye6JyxcbiAgICAgICAgICB1cmw6ICcvcGFnZXMvbG9naW4vaW5kZXgnXG4gICAgICAgIH1cbiAgICAgIF1cbiAgICB9XG4gIH0sXG4gIG1ldGhvZHM6IHtcbiAgICBjaGFuZ2VSb3V0ZSh1cmwpIHtcbiAgICAgIHVuaS5uYXZpZ2F0ZVRvKHtcbiAgICAgICAgdXJsXG4gICAgICB9KVxuICAgIH1cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///120\n");
 
 /***/ }),
 /* 121 */
@@ -5363,7 +5364,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _D_H
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  data: function data() {\n    return {\n      userName: '用户x',\n      loginDays: 1,\n      usedDays: 1,\n      account: '200.00',\n      cellList: [\n      {\n        icon: 'coupon',\n        title: '支付记录',\n        url: '/pages/my-page/payment-record/index' },\n\n      {\n        icon: 'star',\n        title: '行程记录',\n        url: '/pages/my-page/journey-record/index' }] };\n\n\n\n  },\n  methods: {\n    changeRoute: function changeRoute(url) {\n      uni.navigateTo({\n        url: url });\n\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvbXktcGFnZS9pbmRleC52dWUiXSwibmFtZXMiOlsiZGF0YSIsInVzZXJOYW1lIiwibG9naW5EYXlzIiwidXNlZERheXMiLCJhY2NvdW50IiwiY2VsbExpc3QiLCJpY29uIiwidGl0bGUiLCJ1cmwiLCJtZXRob2RzIiwiY2hhbmdlUm91dGUiLCJ1bmkiLCJuYXZpZ2F0ZVRvIl0sIm1hcHBpbmdzIjoid0ZBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVlO0FBQ2JBLE1BRGEsa0JBQ047QUFDTCxXQUFPO0FBQ0xDLGNBQVEsRUFBRSxLQURMO0FBRUxDLGVBQVMsRUFBRSxDQUZOO0FBR0xDLGNBQVEsRUFBRSxDQUhMO0FBSUxDLGFBQU8sRUFBRSxRQUpKO0FBS0xDLGNBQVEsRUFBRTtBQUNSO0FBQ0VDLFlBQUksRUFBRSxRQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQURROztBQU1SO0FBQ0VGLFlBQUksRUFBRSxNQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQU5RLENBTEwsRUFBUDs7OztBQWtCRCxHQXBCWTtBQXFCYkMsU0FBTyxFQUFFO0FBQ1BDLGVBRE8sdUJBQ0tGLEdBREwsRUFDVTtBQUNmRyxTQUFHLENBQUNDLFVBQUosQ0FBZTtBQUNiSixXQUFHLEVBQUhBLEdBRGEsRUFBZjs7QUFHRCxLQUxNLEVBckJJLEUiLCJmaWxlIjoiMTQwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGRhdGEoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIHVzZXJOYW1lOiAn55So5oi3eCcsXG4gICAgICBsb2dpbkRheXM6IDEsXG4gICAgICB1c2VkRGF5czogMSxcbiAgICAgIGFjY291bnQ6ICcyMDAuMDAnLFxuICAgICAgY2VsbExpc3Q6IFtcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdjb3Vwb24nLFxuICAgICAgICAgIHRpdGxlOiAn5pSv5LuY6K6w5b2VJyxcbiAgICAgICAgICB1cmw6ICcvcGFnZXMvbXktcGFnZS9wYXltZW50LXJlY29yZC9pbmRleCdcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdzdGFyJyxcbiAgICAgICAgICB0aXRsZTogJ+ihjOeoi+iusOW9lScsXG4gICAgICAgICAgdXJsOiAnL3BhZ2VzL215LXBhZ2Uvam91cm5leS1yZWNvcmQvaW5kZXgnXG4gICAgICAgIH1cbiAgICAgIF1cbiAgICB9XG4gIH0sXG4gIG1ldGhvZHM6IHtcbiAgICBjaGFuZ2VSb3V0ZSh1cmwpIHtcbiAgICAgIHVuaS5uYXZpZ2F0ZVRvKHtcbiAgICAgICAgdXJsXG4gICAgICB9KVxuICAgIH1cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///140\n");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  data: function data() {\n    return {\n      userName: '用户x',\n      loginDays: 1,\n      usedDays: 1,\n      account: '200.00',\n      cellList: [\n      {\n        icon: 'coupon',\n        title: '支付记录',\n        url: '/pages/my-page/payment-record/index' },\n\n      {\n        icon: 'star',\n        title: '行程记录',\n        url: '/pages/my-page/journey-record/index' },\n\n      {\n        icon: 'clock',\n        title: '退出',\n        url: '/pages/login/index' }] };\n\n\n\n  },\n  methods: {\n    changeRoute: function changeRoute(url) {\n      uni.navigateTo({\n        url: url });\n\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvbXktcGFnZS9pbmRleC52dWUiXSwibmFtZXMiOlsiZGF0YSIsInVzZXJOYW1lIiwibG9naW5EYXlzIiwidXNlZERheXMiLCJhY2NvdW50IiwiY2VsbExpc3QiLCJpY29uIiwidGl0bGUiLCJ1cmwiLCJtZXRob2RzIiwiY2hhbmdlUm91dGUiLCJ1bmkiLCJuYXZpZ2F0ZVRvIl0sIm1hcHBpbmdzIjoid0ZBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVlO0FBQ2JBLE1BRGEsa0JBQ047QUFDTCxXQUFPO0FBQ0xDLGNBQVEsRUFBRSxLQURMO0FBRUxDLGVBQVMsRUFBRSxDQUZOO0FBR0xDLGNBQVEsRUFBRSxDQUhMO0FBSUxDLGFBQU8sRUFBRSxRQUpKO0FBS0xDLGNBQVEsRUFBRTtBQUNSO0FBQ0VDLFlBQUksRUFBRSxRQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQURROztBQU1SO0FBQ0VGLFlBQUksRUFBRSxNQURSO0FBRUVDLGFBQUssRUFBRSxNQUZUO0FBR0VDLFdBQUcsRUFBRSxxQ0FIUCxFQU5ROztBQVdSO0FBQ0VGLFlBQUksRUFBRSxPQURSO0FBRUVDLGFBQUssRUFBRSxJQUZUO0FBR0VDLFdBQUcsRUFBRSxvQkFIUCxFQVhRLENBTEwsRUFBUDs7OztBQXVCRCxHQXpCWTtBQTBCYkMsU0FBTyxFQUFFO0FBQ1BDLGVBRE8sdUJBQ0tGLEdBREwsRUFDVTtBQUNmRyxTQUFHLENBQUNDLFVBQUosQ0FBZTtBQUNiSixXQUFHLEVBQUhBLEdBRGEsRUFBZjs7QUFHRCxLQUxNLEVBMUJJLEUiLCJmaWxlIjoiMTQwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGRhdGEoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIHVzZXJOYW1lOiAn55So5oi3eCcsXG4gICAgICBsb2dpbkRheXM6IDEsXG4gICAgICB1c2VkRGF5czogMSxcbiAgICAgIGFjY291bnQ6ICcyMDAuMDAnLFxuICAgICAgY2VsbExpc3Q6IFtcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdjb3Vwb24nLFxuICAgICAgICAgIHRpdGxlOiAn5pSv5LuY6K6w5b2VJyxcbiAgICAgICAgICB1cmw6ICcvcGFnZXMvbXktcGFnZS9wYXltZW50LXJlY29yZC9pbmRleCdcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246ICdzdGFyJyxcbiAgICAgICAgICB0aXRsZTogJ+ihjOeoi+iusOW9lScsXG4gICAgICAgICAgdXJsOiAnL3BhZ2VzL215LXBhZ2Uvam91cm5leS1yZWNvcmQvaW5kZXgnXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBpY29uOiAnY2xvY2snLFxuICAgICAgICAgIHRpdGxlOiAn6YCA5Ye6JyxcbiAgICAgICAgICB1cmw6ICcvcGFnZXMvbG9naW4vaW5kZXgnXG4gICAgICAgIH1cbiAgICAgIF1cbiAgICB9XG4gIH0sXG4gIG1ldGhvZHM6IHtcbiAgICBjaGFuZ2VSb3V0ZSh1cmwpIHtcbiAgICAgIHVuaS5uYXZpZ2F0ZVRvKHtcbiAgICAgICAgdXJsXG4gICAgICB9KVxuICAgIH1cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///140\n");
 
 /***/ }),
 /* 141 */

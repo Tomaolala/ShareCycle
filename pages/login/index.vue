@@ -1,8 +1,8 @@
 <template>
-  <view class="login-wrap  padding-status-bar">
+  <view class="login-wrap">
+    <view class="top-status-bar" />
     <view class="login-logo">
         <image mode="" src="~@/static/images/logo.svg" />
-       
     </view>
     <view class="login-title">账号密码登录</view>
     <view class="login-form">

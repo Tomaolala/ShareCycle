@@ -42,13 +42,23 @@
     {
       "path": "pages/my-page/payment-record/index", // 我的-支付记录
       "style": {
-        "navigationStyle": "custom"
+        "navigationBarTitleText": "支付记录",
+        "app-plus": {
+          "titleNView": {
+            "type": "default" 
+          }
+        }
       }
     },
     {
       "path": "pages/my-page/journey-record/index", // 我的-行程记录
       "style": {
-        "navigationStyle": "custom"
+        "navigationBarTitleText": "行程记录",
+        "app-plus": {
+          "titleNView": {
+            "type": "default" 
+          }
+        }
       }
     }
   ],
