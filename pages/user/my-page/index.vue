@@ -49,12 +49,12 @@ export default {
         {
           icon: 'coupon',
           title: '支付记录',
-          url: '/pages/my-page/payment-record/index'
+          url: '/pages/user/my-page/payment-record/index'
         },
         {
           icon: 'star',
           title: '行程记录',
-          url: '/pages/my-page/journey-record/index'
+          url: '/pages/user/my-page/journey-record/index'
         },
         {
           icon: 'clock',

@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import homePage from '../home-page/index'
-import orderPage from '../order-page/index'
-import myPage from '../my-page/index'
+import homePage from './home-page/index'
+import orderPage from './order-page/index'
+import myPage from './my-page/index'
 
 export default {
   components: {

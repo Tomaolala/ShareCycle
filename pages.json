@@ -9,56 +9,94 @@
         "navigationStyle": "custom"
       }
     },
+    // 普通用户路由
     {
-      "path": "pages/index/index",
+      "path": "pages/user/index",
       "style": {
         "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/home-page/index", // 首页
+      "path": "pages/user/home-page/index", // 首页
       "style": {
         "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/order-page/index", // 订单
+      "path": "pages/user/order-page/index", // 订单
       "style": {
         "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/cycling-page/index", // 骑行
+      "path": "pages/user/cycling-page/index", // 骑行
       "style": {
         "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/my-page/index", // 我的
+      "path": "pages/user/my-page/index", // 我的
       "style": {
         "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/my-page/payment-record/index", // 我的-支付记录
+      "path": "pages/user/my-page/payment-record/index", // 我的-支付记录
       "style": {
         "navigationBarTitleText": "支付记录",
         "app-plus": {
           "titleNView": {
-            "type": "default" 
+            "type": "default"
           }
         }
       }
     },
     {
-      "path": "pages/my-page/journey-record/index", // 我的-行程记录
+      "path": "pages/user/my-page/journey-record/index", // 我的-行程记录
       "style": {
         "navigationBarTitleText": "行程记录",
         "app-plus": {
           "titleNView": {
-            "type": "default" 
+            "type": "default"
           }
         }
+      }
+    },
+    // 管理员路由
+    {
+      "path": "pages/admin/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/admin/statistics-page/index", // 统计
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/admin/bike-page/index", // 电车列表
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/admin/battery-page/index", // 电池列表
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/admin/fault-page/index", // 故障
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/admin/data-page/index", // 数据
+      "style": {
+        "navigationStyle": "custom"
       }
     }
   ],

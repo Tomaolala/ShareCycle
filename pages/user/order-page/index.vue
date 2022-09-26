@@ -24,13 +24,13 @@
 				text="暂无订单"
 			/>
 			<view class="main-list">
-				<view class="list-box" v-for="order in orderList" @click="navTo('/pages/cycling-page/index', order)">
+				<view class="list-box" v-for="order in orderList" @click="navTo('/pages/user/cycling-page/index', order)">
 					<view class="box-header">
 						<view class="box-header-title">{{ order.tramName }}</view>
 						<view class="box-header-button" :class="`color-${order.status}`">{{ tranf(order.status) }} ></view>
 					</view>
 					<view class="box-body">
-						<u-text class="box-body-text" size="35" prefixIcon="../../static/images/orderPage/time.png" iconStyle="width: 25px;height: 25px;margin-right: 20rpx" :text="order.ctime" />
+						<u-text class="box-body-text" size="35" prefixIcon="@/static/images/orderPage/time.png" iconStyle="width: 25px;height: 25px;margin-right: 20rpx" :text="order.ctime" />
 						<u-text class="box-body-text" size="35" prefixIcon="rmb-circle-fill" iconStyle="font-size: 25px;margin-right: 20rpx" :text="order.payment" />
 					</view>
 				</view>
