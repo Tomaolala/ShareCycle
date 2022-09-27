@@ -2,9 +2,9 @@
 	<view class="content">
 		<view class="header">
 			<view style="height: 50rpx;">
-				
+
 			</view>
-			<text class="textStyle"  @click="backTo()" >  回到登录页面</text>
+			<text class="textStyle" @click="backTo()"> 回到登录页面</text>
 		</view>
 		<!-- <view class="login_img"><image mode="aspectFill" src="/static/image/iamhe.png"></image></view> -->
 
@@ -31,7 +31,9 @@
 </template>
 <script>
 	import {
-		isAdminExist
+		isAdminExist,
+		signUpUser,
+		initAccout
 	} from "@/network/signInAndUp.js"
 	export default {
 
@@ -54,13 +56,25 @@
 				if (await this.isAdminExistOut()) {
 					this.$toast.error('该账号已存在')
 				}
+				// 注册
+				let res = await signUpUser({
+					id: this.admin,
+					userPhone: this.phoneNumber,
+					password: this.password,
+				})
+				console.log(res.data.data);
+				if (res.data.data) {
+					this.$toast.success('注册成功')
+					// 成功后对用户表进行初始化
+					initAccout(this.admin)
+				}
 			},
 			async isAdminExistOut() {
 				// 验证是否存在该账户
 				let res = await isAdminExist(this.admin)
 				return res.data.data !== null
 			},
-			backTo(){
+			backTo() {
 				uni.navigateTo({
 					url: "/pages/login/index"
 				})
@@ -71,7 +85,7 @@
 <style lang="scss" scoped>
 	.header {
 		.textStyle {
-			top:-90rpx;
+			top: -90rpx;
 		}
 
 		height: 100rpx;

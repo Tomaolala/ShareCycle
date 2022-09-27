@@ -1,20 +1,47 @@
 import {
 	myRequest
 } from './http.js'
-
-export function login(config) { //登录
+import dayjs from 'dayjs'
+export function login(options) { //登录
 	return myRequest({
-		url: 'login',
-		method: 'post',
-		data: config
+		url: '/user/userLogin',
+		method: 'Post',
+		data: {
+			id: options.id,
+			password: options.password
+		}
 	})
 }
 export function isAdminExist(id) {
 	return myRequest({
 		url: '/user/findUserById',
 		method: 'GET',
-		data:{
+		data: {
 			id
+		}
+	})
+}
+export function signUpUser(options) {
+	return myRequest({
+		url: '/user/addUser',
+		method: 'Post',
+		data: {
+			id: options.id,
+			userPhone: options.userPhone,
+			password: options.password,
+			role: 'user',
+			ctime: dayjs(new Date()).format('YYYY-MM-DD HH-mm-ss')
+		}
+	})
+}
+export function initAccout(id) {
+	return myRequest({
+		url: '/accout/initAccout',
+		method: 'Post',
+		data: {
+			id,
+			userId:'默认用户',
+			ctime: dayjs(new Date()).format('YYYY-MM-DD HH-mm-ss')
 		}
 	})
 }

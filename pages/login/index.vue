@@ -48,6 +48,9 @@
 </template>
 
 <script>
+	import {
+		login
+	} from '@/network/signInAndUp.js'
 	export default {
 		data() {
 			return {
@@ -80,34 +83,20 @@
 			this.$refs.loginForm.setRules(this.rules)
 		},
 		methods: {
-			submit() {
-				uni.navigateTo({
-					url: '/pages/user/index'
+			async submit() {
+
+				let res = await login({
+					id: this.loginInfo.username,
+					password: this.loginInfo.password
 				})
-				// uni.navigateTo({
-				//   url: '/pages/admin/index'
-				// })
-				this.$refs.loginForm
-					.validate()
-					.then(async res => {
-						try {
-							// const res = await this.login(this.loginInfo)
-							// if (res) {
-							//   this.$toast.success('登录成功!')
-							//   setTimeout(() => {
-							//     uni.redirectTo({
-							//       url: '/pages/index/index',
-							//     })
-							//   }, 600)
-							// } else {
-							//   this.$toast.error('登录失败!')
-							// }
-						} catch (e) {
-							console.log(e)
-							uni.$u.toast('登录失败，' + e)
-						}
+				if (res.data.data.msg === "ok") {
+					uni.navigateTo({
+						url: '/pages/user/index'
 					})
-					.catch(errors => {})
+				} else {
+					this.$toast.error(res.data.data.msg)
+				}
+
 			},
 			focusHandle(key) {
 				this[key + 'Focus'] = true
