@@ -84,7 +84,10 @@
 		},
 		methods: {
 			async submit() {
-
+				if (!this.loginInfo.username || !this.loginInfo.password) {
+					this.$toast.error('请输入')
+					return
+				}
 				let res = await login({
 					id: this.loginInfo.username,
 					password: this.loginInfo.password

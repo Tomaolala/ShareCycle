@@ -33,8 +33,9 @@
 	import {
 		isAdminExist,
 		signUpUser,
-		initAccout
+		
 	} from "@/network/signInAndUp.js"
+	import {initAccout} from '@/network/accoutAbout.js'
 	export default {
 
 		data() {
