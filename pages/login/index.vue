@@ -51,6 +51,9 @@
 	import {
 		login
 	} from '@/network/signInAndUp.js'
+	import {
+		mapMutations
+	} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -93,6 +96,15 @@
 					password: this.loginInfo.password
 				})
 				if (res.data.data.msg === "ok") {
+					// 暂时不做持久化
+					// uni.setStorage({
+					// 	key: 'UserId',
+					// 	data: this.loginInfo.username,
+					// });
+					this.$store.commit("updateUserId",{
+						UserId:this.loginInfo.password
+					})
+					console.log(this.$store.state.User.UserId);
 					uni.navigateTo({
 						url: '/pages/user/index'
 					})
