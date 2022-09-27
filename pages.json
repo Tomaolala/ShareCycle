@@ -9,6 +9,12 @@
         "navigationStyle": "custom"
       }
     },
+	{
+	  "path": "pages/login/signUp",
+	  "style": {
+	    "navigationStyle": "custom"
+	  }
+	},
     // 普通用户路由
     {
       "path": "pages/user/index",
