@@ -2,7 +2,7 @@
 	<view class="home-page">
 		<view class="map"></view>
 		<view class="title"><span>电车列表</span></view>
-		<view class="list-cell" v-for="(cyc, index) in cycList" @click="navTo('/pages/cycling-page/index', cyc.id)">
+		<view class="list-cell" v-for="(cyc, index) in cycList" @click="navTo('/pages/user/cycling-page/index', cyc.id)">
 			<cyc :cyc="cyc"></cyc>
 		</view>
 	</view>

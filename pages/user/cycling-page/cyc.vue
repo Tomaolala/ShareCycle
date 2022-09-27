@@ -1,6 +1,6 @@
 <template>
 	<view class="cyc">
-		<image class="cyc-images" src="../../static/images/cyc.png"></image>
+		<image class="cyc-images" src="@/static/images/cyc.png"></image>
 		<view class="cyc-name">
 			<span>{{ cyc.deviceName }}</span><br>
 			<span class="cyc-other">自行车编号: {{ cyc.number }}</span>
