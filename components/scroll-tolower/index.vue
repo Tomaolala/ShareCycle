@@ -35,7 +35,7 @@
           <slot :list="loadList" name="main" />
         </template>
         <view v-if="showEmpty" class="empty-container">
-          <img src="@/static/img/empty/empty.png" />
+          <img src="@/static/images/empty.png" />
           <text style="color: gray">{{ emptyText }}</text>
         </view>
       </view>
@@ -58,7 +58,7 @@
     props: {
       loadSize: {
         type: Number,
-        default: 8,
+        default: 10,
       },
       // 数据为空时显示图片
       showEmptyStatus: {
@@ -77,7 +77,7 @@
       // 开启自定义下拉刷新
       openRefresher: {
         type: Boolean,
-        default: true,
+        default: false,
       },
       // 上拉更新比对key
       refresherKey: {
@@ -288,6 +288,10 @@
           margin: auto;
         }
       }
+    }
+
+    ::v-deep .u-loadmore__content__text {
+      line-height: unset !important;
     }
   }
 </style>
