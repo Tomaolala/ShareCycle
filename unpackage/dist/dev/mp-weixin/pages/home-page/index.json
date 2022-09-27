@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "cyc": "/pages/cycling-page/cyc"
+  }
+}

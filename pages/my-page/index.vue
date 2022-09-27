@@ -7,7 +7,7 @@
       <view class="name">{{ userName }}</view>
     </view>
     <view class="main">
-      <view class="card tag-list">
+      <view class="card tag-list">	
         <view class="tag">
           <view>已登录</view>
           <view class="tag-num">{{ loginDays }}天</view>
@@ -30,7 +30,7 @@
       </view>
       <view class="card">
         <u-cell-group :border="false">
-          <u-cell v-for="cell in cellList" :key="cell.title" size="large" iconStyle="margin-right:12rpx" :border="false" isLink :icon="cell.icon" :title="cell.title" @click="changeRoute(cell.url)" />
+          <u-cell v-for="cell in cel	lList" :key="cell.title" size="large" iconStyle="margin-right:12rpx" :border="false" isLink :icon="cell.icon" :title="cell.title" @click="changeRoute(cell.url)" />
         </u-cell-group>
       </view>
     </view>

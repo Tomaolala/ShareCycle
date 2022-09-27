@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-button": "/uni_modules/uview-ui/components/u-button/u-button",
+    "u-action-sheet": "/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet",
+    "u-empty": "/uni_modules/uview-ui/components/u-empty/u-empty",
+    "u-text": "/uni_modules/uview-ui/components/u-text/u-text"
+  }
+}

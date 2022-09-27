@@ -17,7 +17,7 @@
           <u-form-item prop="username">
             <u-input
               v-model="loginInfo.username"
-              placeholder="账号"
+              placeholder="账号"	
               @blur="blurHandle('username')"
               @focus="focusHandle('username')"
             >

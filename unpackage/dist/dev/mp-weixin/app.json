@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/index/index",
+    "pages/home-page/index",
+    "pages/order-page/index",
+    "pages/cycling-page/index",
+    "pages/my-page/index",
+    "pages/my-page/payment-record/index",
+    "pages/my-page/journey-record/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}
