@@ -2,11 +2,11 @@
   <view class="content">
     <view class="top-status-bar" />
     <view class="main">
-      <StatisticsPage v-show="this.routeActive === 0" />
-      <BikePage v-show="this.routeActive === 1" />
-      <BatteryPage v-show="this.routeActive === 2" />
-      <FaultPage v-show="this.routeActive === 3" />
-      <DataPage v-show="this.routeActive === 4" />
+      <StatisticsPage v-if="this.routeActive === 0" />
+      <BikePage v-if="this.routeActive === 1" />
+      <BatteryPage v-if="this.routeActive === 2" />
+      <FaultPage v-if="this.routeActive === 3" />
+      <DataPage v-if="this.routeActive === 4" />
     </view>
 
     <view class="tabbar">

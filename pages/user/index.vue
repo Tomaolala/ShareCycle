@@ -2,9 +2,9 @@
   <view class="content">
     <view class="top-status-bar" />
     <view class="main">
-      <homePage v-show="this.routeActive === 0" />
-      <orderPage v-show="this.routeActive === 1" />
-      <myPage v-show="this.routeActive === 2" />
+      <homePage v-if="this.routeActive === 0" />
+      <orderPage v-if="this.routeActive === 1" />
+      <myPage v-if="this.routeActive === 2" />
     </view>
 
     <view class="tabbar">
