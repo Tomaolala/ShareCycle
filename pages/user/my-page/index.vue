@@ -95,6 +95,9 @@
 		computed: {
 			...mapState({
 				UserId: function(state) {
+					if(typeof state.User.UserId==="function")
+					return state.User.UserId()
+					else
 					return state.User.UserId
 				},
 			})

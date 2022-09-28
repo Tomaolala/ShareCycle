@@ -95,19 +95,25 @@
 					id: this.loginInfo.username,
 					password: this.loginInfo.password
 				})
-				if (res.data.data.msg === "ok") {
-					// 暂时不做持久化
-					// uni.setStorage({
-					// 	key: 'UserId',
-					// 	data: this.loginInfo.username,
-					// });
+				if (res.data.data.msg === "user"||res.data.data.msg === "admin") {
+					// 持久化
+					uni.setStorage({
+						key: 'UserId',
+						data: this.loginInfo.username,
+					});
+					// 不登陆默认从缓存中读取
 					this.$store.commit("updateUserId",{
 						UserId:this.loginInfo.password
 					})
-					console.log(this.$store.state.User.UserId);
-					uni.navigateTo({
-						url: '/pages/user/index'
-					})
+					if(res.data.data.msg === "user"){
+						uni.navigateTo({
+							url: '/pages/user/index'
+						})
+					}else{
+						uni.navigateTo({
+							url: '/pages/admin/battery-page/index'
+						})
+					}
 				} else {
 					this.$toast.error(res.data.data.msg)
 				}

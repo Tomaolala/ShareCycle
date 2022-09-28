@@ -1,16 +1,25 @@
 export default {
 	state: {
-		UserId: ""
+		UserId: () => {
+			let UserId=""
+			uni.getStorage({
+				key: "UserId",
+				success(res) {
+					UserId = res.data
+				}
+			})
+			return UserId
+		}
 	},
 	getters: {
 
 	},
 	mutations: {
-		updateUserId(state,options) { 
+		updateUserId(state, options) {
 			state.UserId = options.UserId
 		}
 	},
 	actions: {
-		
+
 	}
 }
