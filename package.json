@@ -10,7 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
     "dayjs": "^1.11.5",
+    "mqtt": "^4.3.7",
     "vuex": "^3.6.2"
+  },
+  "sockjs": {
+    "dev": false
+  },
+  "sockjs-client": {
+    "dev": false
   }
 }

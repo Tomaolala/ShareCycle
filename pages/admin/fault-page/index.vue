@@ -1,5 +1,59 @@
 <template>
-  <view>故障</view>
+  <view>
+	  <view class="header">
+			故障信息
+			
+	  </view>
+	  <view class="" v-for="(item) in records" :key="item.id">
+			<view class="">
+				<text>{{item.id}}</text>
+				<text class="">
+						{{item.fault}}
+				</text>
+			</view>
+	  </view>
+	  
+	  
+	  
+  </view>
 </template>
-<script></script>
-<style lang="scss" scoped></style>
+<script>
+	/**
+	 * 所有的故障信息在这里处理
+	 * 
+	 * 
+	 */
+	import { getFault} from "@/network/fault.js"
+	export default {
+		data(){
+			return{
+				records:[],
+				total:0
+			}
+		},
+		methods:{
+			async getFaultIofo(){
+			  let res= await getFault(0,10)
+			  this.records=res.data.data.records
+			  this.total=res.data.data.total
+			}
+		},
+		mounted(){
+			this.getFaultIofo()
+		}
+	}
+	
+</script>
+<style lang="scss" scoped>
+.header{
+	font-size: 36rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100rpx;
+	margin-bottom: 30rpx;
+	border-bottom: solid 2px lightgray;
+}	
+	
+	
+</style>

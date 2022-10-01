@@ -111,7 +111,7 @@
 						})
 					}else{
 						uni.navigateTo({
-							url: '/pages/admin/battery-page/index'
+							url: '/pages/admin/index'
 						})
 					}
 				} else {

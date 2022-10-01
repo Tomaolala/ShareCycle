@@ -26,6 +26,8 @@
 					</view>
 					<view class="account-right">
 						<view class="account-money">￥{{account}}</view>
+						<button @click="perchase(1)">充值</button>
+						<!-- 理论上给出弹窗选择充值金额 然后充值-->
 						<view class="account-tip">
 							<view class="text">可用余额</view>
 							<view class="rmb">人民币</view>
@@ -47,7 +49,10 @@
 	import {
 		mapState
 	} from 'vuex'
-	import { getAccoutById} from '@/network/accoutAbout.js'
+	import {
+		getAccoutById,
+		changeMoney
+	} from '@/network/accoutAbout.js'
 	export default {
 		data() {
 			return {
@@ -55,7 +60,7 @@
 				userName: '用户x',
 				loginDays: 1,
 				usedDays: 1,
-				account: '200.00',
+				account: '0',
 				cellList: [{
 						icon: 'coupon',
 						title: '支付记录',
@@ -71,7 +76,7 @@
 						title: '退出',
 						url: '/pages/login/index'
 					}
-				]
+				],
 			}
 		},
 		methods: {
@@ -81,24 +86,29 @@
 				})
 			},
 			// 获取用户信息进行渲染
-			async getUserMessage(){
+			async getUserMessage() {
 				let res = await getAccoutById(this.UserId)
-				const{
+				const {
 					user_id,
 					pay_money
-				}= res.data.data
-				this.userName=user_id
-				this.account=pay_money
+				} = res.data.data
+				this.userName = user_id
+				this.account = pay_money
+			},
+			async perchase(money) {
+				let res = await changeMoney(this.UserId,money+this.account)
+				// 事实上应该调微信的第三方
+				this.getUserMessage()
 			}
 
 		},
 		computed: {
 			...mapState({
 				UserId: function(state) {
-					if(typeof state.User.UserId==="function")
-					return state.User.UserId()
+					if (typeof state.User.UserId === "function")
+						return state.User.UserId()
 					else
-					return state.User.UserId
+						return state.User.UserId
 				},
 			})
 		},

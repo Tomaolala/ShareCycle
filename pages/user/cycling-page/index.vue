@@ -17,15 +17,20 @@
 		<view v-if="title === 'homePage'">
 			<view class="box-title">电车指令</view>
 			<direct-page :id="id" :disable="cyc.status == '1'"></direct-page>
-			<view class="clock">
+			<!-- 事件代理到上一级 -->
+			<view class="clock" @click="changestatus">
 				<u-button type="error" text="开锁" v-if="cyc.status == '1'"></u-button>
-				<u-button type="warning" text="还车" v-else></u-button>
+				<u-button type="warning" text="还车" v-else ></u-button>
 			</view>
 		</view>
 		<pay-page :id="id" v-if="title === 'orderPage'" @back="backNav"></pay-page>
 	</view>
 </template>
 <script>
+	/**
+	 * 这里后获取device以及mqtt订阅主题的信息 
+	 * 电量 电池状态 是否开启 以及电池的编号
+	 */
 	import CycPage from './cyc.vue'
 	import DirectPage from './direct.vue'
 	import PayPage from './pay.vue'

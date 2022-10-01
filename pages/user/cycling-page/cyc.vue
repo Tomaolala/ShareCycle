@@ -9,6 +9,10 @@
 </template>
 
 <script name="CycPage">
+	/**
+	 * 在这里检索时应该判断deviceName 是否为sys来检索车
+	 * 事实上展示也只是展示该车的number 而不展示devicename
+	 */
 	export default {
 		props: {
 			cyc: {

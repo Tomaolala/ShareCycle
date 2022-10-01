@@ -16,6 +16,10 @@ export function initAccout(id) {
 		}
 	})
 }
+/**
+ * @param {Object} id
+ * 通过id获取账户信息
+ */
 export function getAccoutById(id) {
 	return myRequest({
 		url: '/accout/getAccoutById',
@@ -24,5 +28,20 @@ export function getAccoutById(id) {
 			id
 		}	
 	})
-
+}
+/**
+ * 
+ * @param {*} id 
+ * @param {*} money 
+ * 修改账号金额
+ */
+export function changeMoney(id,money){
+	return myRequest({
+		url: '/accout/changeMoney',
+		method: 'Post',
+		data: {
+			id,
+			money
+		}	
+	})
 }
