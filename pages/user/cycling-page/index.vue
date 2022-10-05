@@ -9,9 +9,8 @@
 		<cyc-page :cyc="cyc"></cyc-page>
 		<view class="box-title">电车基础信息</view>
 		<u-cell-group :border="false" class="cell-group">
-			<u-cell title="电池编号" value="科技有限公司" icon="home" :title-width="180" :arrow="false"></u-cell>
-			<u-cell title="电池状态" value="人事部" icon="file-text" :title-width="180" :arrow="false"></u-cell>
-			<u-cell title="电池电量" value="秘书" icon="account" :title-width="180" :arrow="false"></u-cell>
+			<u-cell title="电池编号" :value="batteryInfo.number" icon="home" :title-width="180" :arrow="false"></u-cell>
+			<u-cell title="电池状态" :value="batteryInfo.status" icon="file-text" :title-width="180" :arrow="false"></u-cell>
 			</u-cell>
 		</u-cell-group>
 		<view v-if="title === 'homePage'">
@@ -20,8 +19,8 @@
 			<!-- 事件代理到上一级 -->
 			<view class="clock" @click="changestatus">
 				<u-button type="error" text="开锁" v-if="cyc.status == '1'"></u-button>
-				<u-button type="warning" text="还车" v-else ></u-button>
-			</view>
+				<u-button type="warning" text="还车" v-else></u-button>
+			</view>	
 		</view>
 		<pay-page :id="id" v-if="title === 'orderPage'" @back="backNav"></pay-page>
 	</view>
@@ -31,11 +30,18 @@
 	 * 这里后获取device以及mqtt订阅主题的信息 
 	 * 电量 电池状态 是否开启 以及电池的编号
 	 */
+	import {
+		getBattery
+	} from "@/network/battery.js"
 	import CycPage from './cyc.vue'
 	import DirectPage from './direct.vue'
 	import PayPage from './pay.vue'
 	export default {
-		components: { CycPage, DirectPage, PayPage },
+		components: {
+			CycPage,
+			DirectPage,
+			PayPage
+		},
 		data() {
 			return {
 				cyc: {
@@ -69,27 +75,36 @@
 					}
 				],
 				id: '',
+				batteryInfo:{}
 			}
 		},
 		onLoad(option) {
-			console.log(option)
 			this.id = option.id
 			this.title = option.page
 		},
 		mounted() {
 			this.getCycData()
+			// 获取对应的电池信息
+			this.getBatteryById()
 		},
 		methods: {
 			getCycData() {
 				try {
 					this.cyc = this.list.filter(item => item.id == this.id)[0]
-				} catch(e) {
+				} catch (e) {
 					console.log(e)
 					uni.$u.toast(e)
 				}
 			},
+			async getBatteryById() {
+				let res = await getBattery(this.id)
+				this.batteryInfo=res.data.data[0]
+				console.log("电车对应的电池的所有信息",res.data.data[0]);
+			},
 			backNav() {
-				uni.navigateBack()
+				uni.navigateTo({
+					url:"/pages/user/index"
+				})
 			},
 		}
 	};
@@ -98,18 +113,22 @@
 	.wrap {
 		background-color: #f5f5f5;
 		height: 100vh;
+
 		.navbar {
 			.u-nav-slot {
 				display: flex;
+
 				.title {
 					margin-left: 20rpx;
 				}
 			}
 		}
+
 		.box-title {
 			margin: 30rpx 20rpx;
 			padding: 10rpx 15rpx;
 		}
+
 		.cell-group {
 			box-sizing: border-box;
 			background-color: #fff;
@@ -117,6 +136,7 @@
 			padding: 10rpx 15rpx;
 			border-radius: 20rpx;
 		}
+
 		.clock {
 			margin: 30rpx 20rpx;
 		}

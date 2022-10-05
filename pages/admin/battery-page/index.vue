@@ -39,15 +39,7 @@
 		},
 		methods: {
 			async getBatteryInfo() {
-				let res = await getBattery({
-					limit: {
-						page: 0,
-						size: 10
-					},
-					order: {
-						dirc: "asc"
-					}
-				})
+				let res = await getBattery()
 				this.battery = res.data.data
 				console.log(this.battery);
 			},

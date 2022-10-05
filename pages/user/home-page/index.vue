@@ -10,29 +10,12 @@
 
 <script name="OrderPage">
 	import cyc from '../cycling-page/cyc.vue'
+	import {getCycAll} from "@/network/device.js"
 	export default {
 		components: { cyc },
 		data() {
 			return {
-				list: [{
-						id: 1,
-						deviceName: '自行车1',
-						number: 'cyc1',
-						status: '2'
-					},
-					{
-						id: 2,
-						deviceName: '自行车2',
-						number: 'cyc2',
-						status: '1'
-					},
-					{
-						id: 3,
-						deviceName: '自行车3',
-						number: 'cyc3',
-						status: '1'
-					}
-				],
+				list: [],
 				cycList: []
 			}
 		},
@@ -40,13 +23,10 @@
 			this.getCycList()
 		},
 		methods: {
-			getCycList() {
-				try {
-					this.cycList = this.list
-				} catch (e) {
-					console.log(e)
-					uni.$u.toast(e)
-				}
+			async getCycList() {
+				let res=await getCycAll()
+				this.cycList=res.data.data
+				console.log("所有自行车的信息",this.cycList);
 			},
 			navTo(url, id) {
 				uni.navigateTo({

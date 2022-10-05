@@ -2,11 +2,13 @@ import {
 	myRequest
 } from './http.js'
 
-export function getBattery(options){
+export function getBattery(id){
 	return myRequest({
 		method:"Post",
 		url:"/battery/getBattery",
-		data:options
+		data:{
+			number:id
+		}
 	})
 	
 }

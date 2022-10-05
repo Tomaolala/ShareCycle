@@ -48,6 +48,7 @@
 </template>
 
 <script>
+	import mqtt from "mqtt"
 	import {
 		login
 	} from '@/network/signInAndUp.js'
@@ -95,21 +96,21 @@
 					id: this.loginInfo.username,
 					password: this.loginInfo.password
 				})
-				if (res.data.data.msg === "user"||res.data.data.msg === "admin") {
+				if (res.data.data.msg === "user" || res.data.data.msg === "admin") {
 					// 持久化
 					uni.setStorage({
 						key: 'UserId',
 						data: this.loginInfo.username,
 					});
 					// 不登陆默认从缓存中读取
-					this.$store.commit("updateUserId",{
-						UserId:this.loginInfo.password
+					this.$store.commit("updateUserId", {
+						UserId: this.loginInfo.password
 					})
-					if(res.data.data.msg === "user"){
+					if (res.data.data.msg === "user") {
 						uni.navigateTo({
 							url: '/pages/user/index'
 						})
-					}else{
+					} else {
 						uni.navigateTo({
 							url: '/pages/admin/index'
 						})

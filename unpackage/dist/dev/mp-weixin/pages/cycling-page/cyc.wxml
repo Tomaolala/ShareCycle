@@ -1,1 +1,0 @@
-<view class="cyc data-v-2479bae0"><image class="cyc-images data-v-2479bae0" src="../../static/images/cyc.png"></image><view class="cyc-name data-v-2479bae0"><label class="_span data-v-2479bae0">{{cyc.deviceName}}</label><view class="_br data-v-2479bae0"></view><label class="cyc-other _span data-v-2479bae0">{{"自行车编号: "+cyc.number}}</label></view></view>

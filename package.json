@@ -1,25 +1,20 @@
 {
-  "name": "io-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.3",
-    "dayjs": "^1.11.5",
-    "mqtt": "^4.3.7",
-    "vuex": "^3.6.2"
-  },
-  "sockjs": {
-    "dev": false
-  },
-  "sockjs-client": {
-    "dev": false
-  }
+	"name": "io-app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@babel/core": "^7.19.3",
+		"@babel/preset-env": "^7.19.3",
+		"dayjs": "^1.11.5",
+		"mqtt": "^3.0.0",
+		"vuex": "^3.6.2",
+		"ws": "^8.9.0"
+	}
 }
