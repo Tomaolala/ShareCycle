@@ -6,7 +6,7 @@
 			<span class="cyc-other">自行车编号: {{ cyc.number }}</span>
 		</view>
 	</view>
-</template>
+</template>	
 
 <script name="CycPage">
 	/**

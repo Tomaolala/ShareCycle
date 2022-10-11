@@ -99,6 +99,13 @@
         "navigationStyle": "custom"
       }
     },
+	{
+	  "path": "pages/admin/bike-page/addDevice",// 数据
+	  "style": {
+	    "navigationStyle": "custom"
+	  }
+	},
+	
     {
       "path": "pages/admin/data-page/index", // 数据
       "style": {

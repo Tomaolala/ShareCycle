@@ -12,14 +12,14 @@
 			<u-cell title="电池编号" :value="batteryInfo.number" icon="home" :title-width="180" :arrow="false"></u-cell>
 			<u-cell title="电池状态" :value="batteryInfo.status" icon="file-text" :title-width="180" :arrow="false"></u-cell>
 			</u-cell>
-		</u-cell-group>
+		</u-cell-group>`   
 		<view v-if="title === 'homePage'">
 			<view class="box-title">电车指令</view>
 			<direct-page :id="id" :disable="cyc.status == '1'"></direct-page>
 			<!-- 事件代理到上一级 -->
 			<view class="clock" @click="changestatus">
-				<u-button type="error" text="开锁" v-if="cyc.status == '1'"></u-button>
-				<u-button type="warning" text="还车" v-else></u-button>
+				<u-button type="error" text="开锁" v-if="cyc.status == '2'" @click="openBike()"></u-button>
+				<u-button type="warning" text="还车" v-else @click="closedBike"></u-button>
 			</view>	
 		</view>
 		<pay-page :id="id" v-if="title === 'orderPage'" @back="backNav"></pay-page>
@@ -33,6 +33,7 @@
 	import {
 		getBattery
 	} from "@/network/battery.js"
+	import {controlBike} from "../../../useMqtt/publish.js"
 	import CycPage from './cyc.vue'
 	import DirectPage from './direct.vue'
 	import PayPage from './pay.vue'
@@ -48,7 +49,7 @@
 					id: 1,
 					deviceName: '自行车1',
 					number: 'cyc1',
-					status: '1'
+					status: '0'
 				},
 				titleMap: {
 					homePage: '骑行中',
@@ -79,6 +80,7 @@
 			}
 		},
 		onLoad(option) {
+				this.$mqtt.publish("mode","TinDH=27.32")
 			this.id = option.id
 			this.title = option.page
 		},
@@ -86,8 +88,18 @@
 			this.getCycData()
 			// 获取对应的电池信息
 			this.getBatteryById()
+			
+			
+			this.$mqtt.publish("mode","LXD=600")
+			//this.$mqtt.publish("mode","TinDL=8.88")
 		},
-		methods: {
+		methods: {	
+			openBike(){
+				this.$mqtt.publish("mode",`cyc_id=${Number(this.id)};cyc_control=1`)
+			},
+			closedBike(){
+				this.$mqtt.publish("mode",`cyc_id=${Number(this.id)};cyc_control=0`)
+			},
 			getCycData() {
 				try {
 					this.cyc = this.list.filter(item => item.id == this.id)[0]
@@ -100,6 +112,12 @@
 				let res = await getBattery(this.id)
 				this.batteryInfo=res.data.data[0]
 				console.log("电车对应的电池的所有信息",res.data.data[0]);
+			},
+			changestatus(){
+				this.cyc.status==2  ?this.cyc.status=1:this.cyc.status=2
+				/**
+				 * 发送请求修改数据库的状态
+				 */
 			},
 			backNav() {
 				uni.navigateTo({

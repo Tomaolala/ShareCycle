@@ -2,7 +2,7 @@
 	<view class="direct">
 		<u-cell-group :border="false" class="cell-group">
 			<u-cell title="开启" value="科技有限公司" icon="home" :title-width="180" :arrow="false"></u-cell>
-			<u-cell title="电池状态" value="人事部" icon="file-text" :title-width="180" :arrow="false"></u-cell>
+			<u-cell title="电池位置" :value="GPS" icon="file-text" :title-width="180" :arrow="false"></u-cell>
 			<u-cell title="电池电量" value="秘书" icon="account" :title-width="180" :arrow="false"></u-cell>
 			</u-cell>
 		</u-cell-group>
@@ -10,6 +10,9 @@
 </template>
 
 <script name="DirectPage">
+	/**
+	 * 
+	 */
 	export default {
 		props: {
 			id: {
@@ -22,7 +25,10 @@
 			}
 		},
 		data() {
-			return {}
+			return {
+				
+				
+			}
 		},
 		methods: {}
 	}

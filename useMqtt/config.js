@@ -3,10 +3,10 @@
  */
 
 const config = {
-	host:"127.0.0.1",
+	host:"192.168.1.100",
 	// host: '192.168.188.1', 他们的服务器
 	// 这是本地emqx的服务器，能正常使用 比赛不知道
-	port: '8083',
+	port: '1884',
 	// port:""  此处为后端端口 走两套
 	endpoint: '/mqtt',
 	agreement:"ada",

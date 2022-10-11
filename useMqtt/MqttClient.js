@@ -1,11 +1,10 @@
 import * as mqtt from "mqtt/dist/mqtt.js";
 import config from "./config";
-import { test1 ,vstatusHandle} from "./subscribe";
+import { LiveStatusHandle} from "./subscribe";
 
 // 订阅列表，key表示主题名，value为处理函数
 const subscribeMap = {
-  new: test1,
-  VStatus:vstatusHandle
+  LiveStatus:LiveStatusHandle
 };
 const { host, port, options, endpoint, agreement } = config;
 class MqttClient {
@@ -30,7 +29,7 @@ class MqttClient {
       `ws://${host}:${port}${endpoint}`,
       options
     );
-    this.onConnect();
+    this.onConnect();	
   }
 
   /**  监听连接  **/
@@ -151,6 +150,7 @@ class MqttClient {
   addSubscribeLog(topic, message, status) {
     this.subscribeLog.push({ topic, message, status });
   }
+  
 }
 
 export default MqttClient;

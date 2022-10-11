@@ -2,7 +2,7 @@
 	<view class="login-wrap">
 		<view class="top-status-bar" />
 		<view class="login-logo">
-			<image mode="" src="~@/static/images/logo.svg" />
+			<image mode="" src="~@/static/icon/cyc.svg" />
 		</view>
 		<view class="login-title">账号密码登录</view>
 		<view class="login-form">

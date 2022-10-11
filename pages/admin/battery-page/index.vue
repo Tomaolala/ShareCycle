@@ -8,11 +8,11 @@
 				<view>
 					开始时间：{{dayjs(item.start_time).format('YYYY-MM-DD HH-mm-ss')}}
 				</view>
-				<view >
+				<view>
 					结束时间：{{dayjs(item.end_time).format('YYYY-MM-DD HH-mm-ss')}}
 				</view>
 				<view>
-					<text>    状态：  </text>
+					<text> 状态： </text>
 					<text class="" v-if="item.status==0">正常 </text>
 					<text class="" v-if="item.status==1">故障 </text>
 				</view>
@@ -58,21 +58,21 @@
 	}
 </script>
 <style lang="scss" scoped>
-.header{
-	font-size: 36rpx;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100rpx;
-	margin-bottom: 30rpx;
-	border-bottom: solid 2px lightgray;
-}	
-.battery-list{
-	padding: 30rpx;
-	padding-bottom: 20rpx;
-	border: solid 5px lightgray;
-	border-radius: 5%;
-}
+	.header {
+		font-size: 36rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100rpx;
+		background-color: #1677ff;
+		margin-bottom: 30rpx;
+		border-bottom: solid 2px lightgray;
+	}
 
-	
+	.battery-list {
+		padding: 30rpx;
+		padding-bottom: 20rpx;
+		border: solid 5px lightgray;
+		border-radius: 5%;
+	}
 </style>
